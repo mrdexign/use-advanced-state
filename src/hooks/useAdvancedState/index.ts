@@ -1,7 +1,7 @@
 import OBJ from '../../utils/OBJ';
+import useMountedState from '../useMountedState';
 import { useEffect, SetStateAction } from 'react';
 import { OBJECT, SUG, NestedKeyOf } from '../../global';
-import useMountedState from '../useMountedState/useMountedState';
 
 type StateDispatch<T = any> = SetStateAction<T>;
 
@@ -56,6 +56,7 @@ const useAdvancedState = <T extends OBJECT = OBJECT<any>>(in_state: T, dependenc
 		discard: () => setTmpData(org),
 		set: { org: setOrg, tmp: setTmp },
 		get: { org: getOrg, tmp: getTmp },
+		merge: () => setOrgData(OBJ.clone(tmp)),
 	};
 };
 
