@@ -9,7 +9,6 @@
 		"build": "tsc"
 	},
 	"peerDependencies": {
-		"crypto": "^1.0.1",
 		"react": "^18",
 		"react-dom": "^18"
 	},
